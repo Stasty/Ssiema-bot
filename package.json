@@ -1,0 +1,10 @@
+{
+  "name": "Ssiema bot",
+  "version": "1.0.0",
+  "description": "Na potrzeby serwera",
+  "main": "bot.js",
+  "author": "Stasty",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  }
+}
