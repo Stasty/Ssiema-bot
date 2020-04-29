@@ -9,10 +9,10 @@ client.on("ready", () => {
 });
 
 client.on("message", (message) => {
-    if (Words.some(word[0] => message.content.includes(word[0]))) {
+    if (Words[0]) {
         message.reply("Haha");
     }
-    if (Words.some(word[1] => message.content.includes(word[1]))) {
+    if (Words[1]) {
         message.reply("Mmmmmnom nom nom nom");
     }
 });
