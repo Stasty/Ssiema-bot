@@ -22,4 +22,4 @@ client.on('guildMemberAdd', member => {
     channel.send(`Ssiema, ${member}, polecam coś puścić`);
 });
 
-client.login(token);
+client.login(token).catch(err=>console.error);
