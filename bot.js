@@ -9,15 +9,14 @@ client.on("ready", () => {
 });
 
 client.on("message", (message) => {
-    if (Words.some(word => message.content.includes(word[0]))) {
+    if (Words.some(word[0] => message.content.includes(word[0]))) {
         message.reply("Haha");
     }
+    if (Words.some(word[1] => message.content.includes(word[1]))) {
+        message.reply("Mmmmmnom nom nom nom");
+    }
 });
-client.on("message", (message) => {
-if (Words.some(word => message.content.includes(word[1]))) {
-    message.reply("Mmmmmnom nom nom nom");
-}
-});
+
 
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.cache.find(ch => ch.name === 'ogólny');
