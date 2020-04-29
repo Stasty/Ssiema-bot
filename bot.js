@@ -2,7 +2,7 @@
 const client = new Discord.Client();
 const Words = ["Dobre, co nie?"];
 const komedny = ["siema"];
-const token = process.env.Ssiema - Bot;
+const token = process.env.Ssiema-Bot;
 const PREFIX = "-"
 client.on("ready", () => {
     console.log("I am ready!");
