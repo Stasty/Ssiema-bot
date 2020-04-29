@@ -11,7 +11,6 @@ client.on("ready", () => {
 client.on("message", (message) => {
     if (Words.some(word => message.content.includes(word))) {
         message.reply("Haha");
-        message.delete();
     }
 });
 
