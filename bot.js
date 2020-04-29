@@ -25,3 +25,4 @@ client.on('guildMemberAdd', member => {
     channel.send(powitania[[zmienna]);
 });
 
+client.login(auth.token);
