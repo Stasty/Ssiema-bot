@@ -1,6 +1,6 @@
 ﻿const Discord = require("discord.js");
 const client = new Discord.Client();
-const Words = ["Dobre, co nie?", "Dobre co nie"];
+const Words = ["Dobre, co nie?"];
 const komedny = ["siema"];
 const token = process.env.token;
 const PREFIX = "-"
