@@ -2,7 +2,6 @@
 const client = new Discord.Client();
 const Words = ["Dobre, co nie?", "Dobre co nie"];
 const komedny = ["siema"];
-const powitania = ["Witaj, graczu",`Ssiema, ${member}`,"Ssiema, jak Ci mija dzień?"]
 
 client.on("ready", () => {
     console.log("I am ready!");
