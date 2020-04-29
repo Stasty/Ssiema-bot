@@ -1,5 +1,4 @@
 ﻿const Discord = require("discord.js");
-const auth = require("./auth.json");
 const client = new Discord.Client();
 const Words = ["Dobre, co nie?", "Dobre co nie"];
 const komedny = ["siema"];
@@ -22,7 +21,5 @@ client.on('guildMemberAdd', member => {
     if (!channel) return;
     var zmienna;
     zmienna = Math.floor(Math.random() * 3);
-    channel.send(powitania[[zmienna]);
+    channel.send(powitania[zmienna]);
 });
-
-client.login(auth.token);
