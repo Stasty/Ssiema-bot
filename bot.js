@@ -2,6 +2,7 @@
 const client = new Discord.Client();
 const Words = ["Dobre, co nie?", "Dobre co nie"];
 const komedny = ["siema"];
+const token = process.env.token;
 const PREFIX = "-"
 client.on("ready", () => {
     console.log("I am ready!");
@@ -20,3 +21,5 @@ client.on('guildMemberAdd', member => {
     if (!channel) return;
     channel.send(`Ssiema, ${member}, polecam coś puścić`);
 });
+
+client.login(token);
