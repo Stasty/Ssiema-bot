@@ -5,6 +5,7 @@ const komedny = ["siema"];
 const token = process.env.token;
 const PREFIX = "-"
 client.on("ready", () => {
+    process.env.Ssiema-Bot;
     console.log("I am ready!");
 });
 
