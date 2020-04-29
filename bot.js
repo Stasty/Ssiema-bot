@@ -13,7 +13,11 @@ client.on("message", (message) => {
         message.reply("Haha");
     }
 });
-
+client.on("message", (message) => {
+if (Words.some(word => message.content.includes(word[1]))) {
+    message.reply("Mmmmmnom nom nom nom");
+}
+});
 
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.cache.find(ch => ch.name === 'ogólny');
