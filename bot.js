@@ -2,7 +2,7 @@
 const client = new Discord.Client();
 const Words = ["Dobre, co nie?", "Dobre co nie"];
 const komedny = ["siema"];
-
+const PREFIX = "-"
 client.on("ready", () => {
     console.log("I am ready!");
 });
@@ -16,10 +16,7 @@ client.on("message", (message) => {
 
 
 client.on('guildMemberAdd', member => {
-    const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
+    const channel = member.guild.channels.cache.find(ch => ch.name === 'ogólny');
     if (!channel) return;
-    const powitania = ["Witaj, graczu", `Ssiema, ${member}`, "Ssiema, jak Ci mija dzień?"]
-    var zmienna;
-    zmienna = Math.floor(Math.random() * 3);
-    channel.send(powitania[zmienna]);
+    channel.send(`Ssiema, ${member}, polecam coś puścić`);
 });
