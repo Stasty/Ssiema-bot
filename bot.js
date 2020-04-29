@@ -19,6 +19,7 @@ client.on("message", (message) => {
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
     if (!channel) return;
+    const powitania = ["Witaj, graczu", `Ssiema, ${member}`, "Ssiema, jak Ci mija dzień?"]
     var zmienna;
     zmienna = Math.floor(Math.random() * 3);
     channel.send(powitania[zmienna]);
