@@ -1,7 +1,7 @@
 ﻿const Discord = require("discord.js");
 const client = new Discord.Client();
 const Words = ["Dobre, co nie?"];
-const komedny = ["siema" ];
+const komedny = ["siema", "Marchew"];
 const token = process.env.Ssiema;
 const PREFIX = "-"
 client.on("ready", () => {
@@ -11,6 +11,9 @@ client.on("ready", () => {
 client.on("message", (message) => {
     if (Words.some(word => message.content.includes(word[0]))) {
         message.reply("Haha");
+    }
+    if (Words.some(word => message.content.includes(word[1]))) {
+        message.reply("Mmmmmnom nom nom nom");
     }
 });
 
