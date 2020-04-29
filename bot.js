@@ -11,7 +11,7 @@ client.on("ready", () => {
 client.on("message", (message) => {
     if (Words.some(word => message.content.includes(word[0]))) {
         message.reply("Haha");
-    }
+    }else
     if (Words.some(word => message.content.includes(word[1]))) {
         message.reply("Mmmmmnom nom nom nom");
     }
