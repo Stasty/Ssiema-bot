@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Na potrzeby serwera",
   "main": "bot.js",
-  "start": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
   "author": "Stasty",
   "dependencies": {
     "discord.js": "^12.2.0"
