@@ -9,12 +9,12 @@ client.on("ready", () => {
 });
 
 client.on("message", (message) => {
-    /*if (Words[0]) {
+    if (message.content == Words[0]) {
         message.reply("Haha");
     }
-    if (Words[1]) {
+    if (message.content == Words[1]) {
         message.reply("Mmmmmnom nom nom nom");
-    }*/
+    }
 });
 
 
