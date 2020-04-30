@@ -17,11 +17,11 @@ client.on("message", (message) => {
     else if (message.content == Words[1]) {
         message.reply("Mmmmmnom nom nom nom");
     }
-    else if (message.content == prefix + komendy[0]) {
-        for (MessageMentionOptions.users){
-            message.channel.send.mentions.users(`Ssiema, ${user}`);
-        }
-    }
+    //else if (message.content == prefix + komendy[0]) {
+    //    for (MessageMentionOptions.users){
+    //        message.channel.send.mentions.users(`Ssiema, ${user}`);
+    //    }
+    //}
 });
 
 
