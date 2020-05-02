@@ -1,9 +1,11 @@
 ﻿const Discord = require("discord.js");
 const client = new Discord.Client();
+const Settings = require("settings.json")
 const Words = ["Dobre, co nie?", "Marchew"];
 const komendy = ["Ssiema", "zmienprefix"];
 const token = process.env.Ssiema;
-var PREFIX = "-"
+
+
 
 
 client.on("ready", () => {
@@ -17,8 +19,9 @@ client.on("message", (message) => {
     else if (message.content == Words[1]) {
         message.reply("Mmmmmnom nom nom nom");
     }
-    else if (message.content.startsWith(PREFIX + komendy[1])) {
-        PREFIX = message.content - PREFIX - komendy[1] - ' ';
+    else if (message.content.startsWith(Settings.prefix + komendy[1])) {
+        Settings.prefix = message.content - Settings.prefix - komendy[1] - ' ';
+        message.send(Settings.prefix + "to jest nowy prefix");
     }
 });
 
