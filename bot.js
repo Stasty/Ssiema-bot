@@ -37,7 +37,7 @@ client.on("message", (message) => {
 client.on("message", async message => {
     let settings = JSON.parse(fs.readFileSync("./settings.json", "utf8"));
 
-    let prefix = settigs[message.guild.id].prefix;
+    let prefix = settings[message.guild.id].prefix;
     let msgArray = message.content.split(" ");
     let cmd = msgArray[0];
     if (cmd.slice(0, prefix.length) !== prefix) return;
