@@ -1,10 +1,12 @@
 ﻿const Discord = require("discord.js");
 const client = new Discord.Client();
-const Settings = require("./settings.json")
 const Words = ["Dobre, co nie?", "Marchew"];
 const token = process.env.Ssiema;
 const fs = require('fs');
+const Config = require("./Config.JSON")
 client.commands = new Discord.Collection();
+
+
 
 fs.readdir("./commands/", (err, files) => {
     if (err) console.log(err);
@@ -36,7 +38,11 @@ client.on("message", (message) => {
 
 client.on("message", async message => {
     let settings = JSON.parse(fs.readFileSync("./settings.json", "utf8"));
-
+    if (!settings[message.guild.id]) {
+        settings[message.guild.id] = {
+            prefix: Config.prefix
+        };
+    }
     let prefix = settings[message.guild.id].prefix;
     let msgArray = message.content.split(" ");
     let cmd = msgArray[0];

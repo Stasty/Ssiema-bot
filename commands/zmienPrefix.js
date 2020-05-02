@@ -12,5 +12,5 @@
 }
 
 module.exports.help = {
-    name: "prefix"
+    name: "zmienPrefix"
 }
