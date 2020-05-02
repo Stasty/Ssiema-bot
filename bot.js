@@ -2,26 +2,24 @@
 const client = new Discord.Client();
 const Settings = require("./settings.json")
 const Words = ["Dobre, co nie?", "Marchew"];
-const komendy = ["Ssiema", "zmienprefix"];
 const token = process.env.Ssiema;
 const fs = require('fs');
+client.commands = new Discord.Collection();
 
-module.exports.run = async (client, message, args) => {
-    if (!message.member.hasPermission("MANAGE_SERVER")) return message.reply("Brak zgody");
-    if (!args[0]) return message.reply("No podaj go no");
+fs.readdir("./commands/", (err, files) => {
+    if (err) console.log(err);
+    let jsfile = files.filter(f => f.split(".").pop === "js");
+    if (jsflie.length <= 0) {
+        console.log("Could not find command");
+        return;
+    }
 
-    let settings = JSON.parse(fs.readFileSync("./settings.json", "utf8"));
-    settings[message.guild.id] = {
-        prefix: args[0]
-    };
-    fs.writeFile("./settings.json", JSON.stringify(settings), (err) => { if (err) console.log(err); });
+    jsfile.forEach((f, i) => {
+        let props = require("./commands/${f}");
+        client.commands.set(props.help.name, props);
+    });
+})
 
-    message.chanel.send("Prefix został zmieniony")
-}
-
-module.exports.help = {
-    name: "prefix"
-}
 
 client.on("ready", () => {
     console.log("I am ready!");
@@ -36,13 +34,18 @@ client.on("message", (message) => {
     }
 });
 
-client.on("message", (message) => {
+client.on("message", async message => {
     let settings = JSON.parse(fs.readFileSync("./settings.json", "utf8"));
-    settings[message.guild.id] = {
-        prefix: args[0]
-    };
+
     let prefix = settigs[message.guild.id].prefix;
+    let msgArray = message.content.split(" ");
+    let cmd = msgArray[0];
+    if (cmd.slice(0, prefix.length) !== prefix) return;
+    let args = msgArray.slice(1);
+    let cmdFile = client.commands.get(cmd.slice(prefix.length));
+    if (cmdFile) cmdFile.run(client, message, args);
 });
+
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.cache.find(ch => ch.name === 'ogólny');
     if (!channel) return;
