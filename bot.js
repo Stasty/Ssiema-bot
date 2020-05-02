@@ -1,6 +1,6 @@
 ﻿const Discord = require("discord.js");
 const client = new Discord.Client();
-const Settings = require("settings.json")
+const Settings = require("./settings.json")
 const Words = ["Dobre, co nie?", "Marchew"];
 const komendy = ["Ssiema", "zmienprefix"];
 const token = process.env.Ssiema;
