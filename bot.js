@@ -6,7 +6,7 @@ const komendy = ["Ssiema", "zmienprefix"];
 const token = process.env.Ssiema;
 const fs = require('fs');
 
-moodule.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args) => {
     if (!message.member.hasPermission("MANAGE_SERVER")) return message.reply("Brak zgody");
     if (!args[0]) return message.reply("No podaj go no");
 
@@ -19,7 +19,7 @@ moodule.exports.run = async (client, message, args) => {
     message.chanel.send("Prefix został zmieniony")
 }
 
-moodule.exports.help = {
+module.exports.help = {
     name: "prefix"
 }
 
