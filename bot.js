@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const Words = ["Dobre, co nie?", "Marchew"];
 const token = process.env.Ssiema;
 const fs = require('fs');
-const Config = require("./Config.JSON")
+const Config = require("./Config.json")
 client.commands = new Discord.Collection();
 
 
