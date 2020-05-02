@@ -1,9 +1,9 @@
 ﻿const Discord = require("discord.js");
 const client = new Discord.Client();
 const Words = ["Dobre, co nie?", "Marchew"];
-const komedny = ["Ssiema"];
+const komendy = ["Ssiema", "zmienprefix"];
 const token = process.env.Ssiema;
-const PREFIX = "-"
+var PREFIX = "-"
 
 
 client.on("ready", () => {
@@ -17,11 +17,9 @@ client.on("message", (message) => {
     else if (message.content == Words[1]) {
         message.reply("Mmmmmnom nom nom nom");
     }
-    //else if (message.content == prefix + komendy[0]) {
-    //    for (MessageMentionOptions.users){
-    //        message.channel.send.mentions.users(`Ssiema, ${user}`);
-    //    }
-    //}
+    else if (message.content.startsWith(PREFIX + komendy[1])) {
+        PREFIX = message.content - PREFIX - komendy[1] - ' ';
+    }
 });
 
 
