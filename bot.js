@@ -7,7 +7,7 @@ const token = process.env.Ssiema;
 const fs = require('fs');
 
 moodule.exports.run = async (bot, message, args) => {
-    if (!message.member.hasPermission("MANAGE_SERVER")) return message.reply(Brak zgody);
+    if (!message.member.hasPermission("MANAGE_SERVER")) return message.reply("Brak zgody");
     if (!args[0]) return message.reply("No podaj go no");
 
     let settings = JSON.parse(fs.readFileSync("./settings.json", "utf8"));
