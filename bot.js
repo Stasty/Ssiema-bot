@@ -6,7 +6,7 @@ const komendy = ["Ssiema", "zmienprefix"];
 const token = process.env.Ssiema;
 const fs = require('fs');
 
-moodule.exports.run = async (bot, message, args) => {
+moodule.exports.run = async (client, message, args) => {
     if (!message.member.hasPermission("MANAGE_SERVER")) return message.reply("Brak zgody");
     if (!args[0]) return message.reply("No podaj go no");
 
