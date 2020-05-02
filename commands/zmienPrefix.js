@@ -1,4 +1,7 @@
-﻿module.exports.run = async (client, message, args) => {
+﻿const Discord = require("discord.js");
+const fs = require('fs');
+
+module.exports.run = async (client, message, args) => {
     if (!message.member.hasPermission("MANAGE_SERVER")) return message.reply("Brak zgody");
     if (!args[0]) return message.reply("No podaj go no");
 
