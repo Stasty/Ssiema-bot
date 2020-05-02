@@ -9,7 +9,7 @@ client.commands = new Discord.Collection();
 fs.readdir("./commands/", (err, files) => {
     if (err) console.log(err);
     let jsfile = files.filter(f => f.split(".").pop === "js");
-    if (jsflie.length <= 0) {
+    if (jsfile.length <= 0) {
         console.log("Could not find command");
         return;
     }
