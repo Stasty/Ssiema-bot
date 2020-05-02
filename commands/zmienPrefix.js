@@ -8,7 +8,7 @@
     };
     fs.writeFile("./settings.json", JSON.stringify(settings), (err) => { if (err) console.log(err); });
 
-    message.chanel.send("Prefix został zmieniony")
+    message.chanel.send("Prefix został zmieniony");
 }
 
 module.exports.help = {
